@@ -1,6 +1,5 @@
 import { createStore, combineReducers } from 'redux';
 import counterR from './pages/counter/reducers/index';
-console.log(counterR)
 const Reducer = combineReducers({
     counter: counterR.counterReducer
 })

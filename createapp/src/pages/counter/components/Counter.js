@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import Count from './Count';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';       //连通redux
+import { bindActionCreators } from 'redux'; //用于绑定多个action
 import * as actions from '../actions';
 class Counter extends Component {
-    incrment = () => {
-        this.props.counterActions.increment();
+    increment = () => {
+        return this.props.counterActions.increment();
+    }
+    decrement = () => {
+        return this.props.counterActions.decrement();
+    }
+    counterActions = {
+        increment: this.increment,
+        decrement: this.decrement
     }
     render() {
-        console.log('1111', this.props.counter);
+        const counter = this.props;
         return (
             <div>
-                <Count incrment={this.incrment} />
+                <Count
+                    counterActions={this.counterActions}
+                    counter={this.props.counter}
+                />
             </div>
         )
     }
@@ -19,7 +29,7 @@ class Counter extends Component {
 //获取state数据
 const mapStateToProps = state => {
     return {
-        counter: state
+        counter: state.counter
     }
 }
 //分发action
