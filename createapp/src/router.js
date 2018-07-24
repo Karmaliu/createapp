@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter } from 'react-router-dom'
+import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import Counter from './pages/counter/page';
 import App from './App';
 import Layouts from './layouts';
@@ -14,11 +14,11 @@ const Routes = () => {
         <BrowserRouter>
             <div>
                 <Layouts />
-                <switch>
+                <Switch>
                     <Route exact path="/" component={App} />
                     <Route path="/counter" component={Counter} />
                     <Route path="/404" component={notFound} />
-                </switch>
+                </Switch>
 
             </div>
         </BrowserRouter >

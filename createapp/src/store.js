@@ -1,8 +1,9 @@
 import { createStore, combineReducers } from 'redux';
 import counterR from './pages/counter/reducers/index';
-const Reducer = combineReducers({
+//里面放入个个页面的reducer 和 state
+const reducer = combineReducers({
     counter: counterR.counterReducer
 })
-const visiValue = 0;
 
-export const store = createStore(Reducer, visiValue);
+
+export const store = createStore(reducer);
