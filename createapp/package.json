@@ -11,6 +11,13 @@
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0"
   },
+  "proxy": {
+    "/api": {
+      "target": "http://web.juhe.cn:8080/environment/",
+      "changeOrigin": true,
+      "pathRewrite": {"^/api": ""}
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
