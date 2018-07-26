@@ -3,7 +3,7 @@
 import * as actionTypes from '../actionTypes';
 
 export default (state = 0, action) => {
-    console.log(state)
+    console.log(action)
     switch (action.type) {
         case actionTypes.increment:
             return state + 1;
