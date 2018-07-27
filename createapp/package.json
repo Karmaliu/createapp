@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "history": "^4.7.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
@@ -15,7 +16,9 @@
     "/api": {
       "target": "http://web.juhe.cn:8080/environment/",
       "changeOrigin": true,
-      "pathRewrite": {"^/api": ""}
+      "pathRewrite": {
+        "^/api": ""
+      }
     }
   },
   "scripts": {
