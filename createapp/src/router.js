@@ -1,11 +1,8 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
-import createBrowserHistory from 'history/createBrowserHistory' //路径历史
 import Counter from './pages/counter/page';
 import App from './App';
 import Layouts from './layouts';
-
-const history = createBrowserHistory();
 
 function notFound() {
     return (
@@ -14,7 +11,7 @@ function notFound() {
 }
 const Routes = () => {
     return (
-        <Router history={history}>
+        <Router>
             <div>
                 <Layouts />
                 <Switch>
