@@ -5,7 +5,14 @@ function* fetchUser() {
     try {
         // yield put({ type: "INCREMENT" });
         //call 网络请求
-        const user = yield call(queryWeather, 'LLL');
+        const { data } = yield call(queryWeather);
+        if (data && data.error_code=== 0) {
+            yield put({
+                type: 'saveResult',
+                payload: data.result
+            })
+        }
+        yield put({ type: "save" })
     } catch (e) {
         //put 发起action
         yield put({ type: "INCREMENT" });
@@ -43,10 +50,10 @@ function decrement() {
 // }
 
 // export default mySaga;
-function* watchIncrementAsync() {
-    //用于多个fetchUser多个同时进行
-    yield takeLatest("fetchUser", fetchUser)
-}
+// function* watchIncrementAsync() {
+//     //用于多个fetchUser多个同时进行
+//     yield takeLatest("fetchUser", fetchUser)
+// }
 
 export default function* mySaga() {
     yield takeEvery('fetchUser1', fetchUser1)

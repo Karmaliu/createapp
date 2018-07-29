@@ -15,7 +15,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://web.juhe.cn:8080/environment/",
+      "target": "http://v.juhe.cn/historyWeather/province",
       "changeOrigin": true,
       "pathRewrite": {
         "^/api": ""

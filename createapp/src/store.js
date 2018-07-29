@@ -13,7 +13,8 @@ const sagaMiddleware = createSagaMiddleware();
 const reducer = combineReducers({
     //集成react-router
     router: routerReducer,
-    counter: counterR.counterReducer
+    counter: counterR.counterReducer,
+    weather: counterR.weather   
 })
 
 export const store = createStore(

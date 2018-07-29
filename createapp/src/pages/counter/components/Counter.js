@@ -27,12 +27,14 @@ class Counter extends Component {
         increment: this.increment,
         decrement: this.decrement,
         fetchUser: this.fetchUser,
-        fetchUser1:this.fetchUser1
+        fetchUser1: this.fetchUser1
     }
     render() {
+        const { weather } = this.props;
         return (
             <div>
                 <Count
+                    weater={weather}
                     counterActions={this.counterActions}
                     counter={this.props.counter}
                 />
@@ -43,7 +45,8 @@ class Counter extends Component {
 //获取state数据
 const mapStateToProps = state => {
     return {
-        counter: state.counter
+        counter: state.counter,
+        weather: state.weather
     }
 }
 
