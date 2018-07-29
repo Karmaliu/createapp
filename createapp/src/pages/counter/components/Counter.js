@@ -18,10 +18,16 @@ class Counter extends Component {
             type: 'fetchUser'
         })
     }
+    fetchUser1 = () => {
+        this.props.dispatch({
+            type: 'fetchUser1'
+        })
+    }
     counterActions = {
         increment: this.increment,
         decrement: this.decrement,
-        fetchUser: this.fetchUser
+        fetchUser: this.fetchUser,
+        fetchUser1:this.fetchUser1
     }
     render() {
         return (

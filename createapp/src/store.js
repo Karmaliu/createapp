@@ -4,7 +4,7 @@ import mySaga from './pages/counter/sagas';
 import counterR from './pages/counter/reducers/index';
 import createHistory from "history/createBrowserHistory"
 import { routerReducer, routerMiddleware } from "react-router-redux";
-
+// import { fetchUser, fetchUser1 } from './pages/counter/sagas';
 const history = createHistory()
 
 // create the saga middleware
