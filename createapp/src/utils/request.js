@@ -1,5 +1,4 @@
-// import fetch from 'dva/fetch';
-
+//es6 支持原生fetch
 function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
         return response;
@@ -36,16 +35,3 @@ export default async function request(url, options) {
     return ret;
 }
 
-// const requet =fetch(apiUrl).then((response) => {
-//     if (response.status !== 200) {
-//       throw new Error('Fail to get response with status ' + response.status);
-//     }
-
-//     response.json().then((responseJson) => {
-//       dispatch(fetchWeatherSuccess(responseJson.weatherinfo));
-//     }).catch((error) => {
-//       dispatch(fetchWeatherFailure(error));
-//     });
-//   }).catch((error) => {
-//     dispatch(fetchWeatherFailure(error));
-//   })

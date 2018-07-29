@@ -9,7 +9,7 @@ import createHistory from "history/createBrowserHistory"
 //react-router-dom 集成redux
 import { ConnectedRouter } from "react-router-redux";
 
-const history = createHistory()
+const history = createHistory();
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
