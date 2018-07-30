@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Count from './Count';
 import { connect } from 'react-redux';       //连通redux
 // import { bindActionCreators } from 'redux'; //用于绑定多个action  不采用教程方法了
+import Pbutton from './Pbutton';
 class Counter extends Component {
     increment = () => {
         this.props.dispatch({
@@ -18,7 +19,8 @@ class Counter extends Component {
             type: 'fetchUser'
         })
     }
-    fetchUser1 = () => {
+    fetchUser1 = (p1, p2) => {
+        console.log(p1, p2)
         this.props.dispatch({
             type: 'fetchUser1'
         })
@@ -29,10 +31,14 @@ class Counter extends Component {
         fetchUser: this.fetchUser,
         fetchUser1: this.fetchUser1
     }
+    handlezzz(p1,p2) {
+        console.log(p1,p2)
+    }
     render() {
         const { weather } = this.props;
         return (
             <div>
+                <Pbutton fetchUserOnclick={this.handlezzz.bind(this, 'zzzz')} />
                 <Count
                     weater={weather}
                     counterActions={this.counterActions}
