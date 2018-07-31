@@ -31,8 +31,14 @@ class Counter extends Component {
         fetchUser: this.fetchUser,
         fetchUser1: this.fetchUser1
     }
-    handlezzz(p1,p2) {
-        console.log(p1,p2)
+    handlezzz(p1, p2) {
+        console.log(p1, p2)
+    }
+    //用于刷新页面请求
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'fetchUser'
+        })
     }
     render() {
         const { weather } = this.props;
