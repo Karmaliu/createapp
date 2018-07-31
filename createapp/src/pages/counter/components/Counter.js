@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Count from './Count';
 import { connect } from 'react-redux';       //连通redux
 // import { bindActionCreators } from 'redux'; //用于绑定多个action  不采用教程方法了
+import styles from './Counter.css';
 import Pbutton from './Pbutton';
 class Counter extends Component {
     increment = () => {
@@ -43,7 +44,7 @@ class Counter extends Component {
     render() {
         const { weather } = this.props;
         return (
-            <div>
+            <div className={styles.nomal}>
                 <Pbutton fetchUserOnclick={this.handlezzz.bind(this, 'zzzz')} />
                 <Count
                     weater={weather}
