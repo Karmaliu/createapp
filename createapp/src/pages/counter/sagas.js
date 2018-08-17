@@ -1,4 +1,5 @@
-import { call, put, takeEvery, takeLatest, all } from 'redux-saga/effects';
+// import { call, put, takeEvery, takeLatest, all } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import { queryWeather } from './server/counter';
 // worker Saga : 将在 USER_FETCH_REQUESTED action 被 dispatch 时调用
 function* fetchUser() {
@@ -6,7 +7,7 @@ function* fetchUser() {
         // yield put({ type: "INCREMENT" });
         //call 网络请求
         const { data } = yield call(queryWeather);
-        if (data && data.error_code=== 0) {
+        if (data && data.error_code === 0) {
             yield put({
                 type: 'saveResult',
                 payload: data.result
@@ -20,15 +21,15 @@ function* fetchUser() {
 }
 function* fetchUser1() {
     try {
-        const user = yield call(queryWeather, 'zzz');
+        yield call(queryWeather, 'zzz');
     } catch (e) {
         yield put({ type: "INCREMENT" })
     }
 }
 
-function decrement() {
-    alert('ssss')
-}
+// function decrement() {
+//     alert('ssss')
+// }
 /*
   在每个 `USER_FETCH_REQUESTED` action 被 dispatch 时调用 fetchUser
   允许并发（译注：即同时处理多个相同的 action）
