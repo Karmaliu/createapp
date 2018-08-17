@@ -59,3 +59,5 @@
               }
             ]
           },
+
+# https://github.com/codebandits/react-app-rewire-css-modules
