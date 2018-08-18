@@ -1,9 +1,13 @@
 import React from 'react';
 import SomeButton from './components/HigherOrder';
+import BasicLayout from '../higherorder';
 export default () => {
     return (
-        <div>
-            <SomeButton />
-        </div>
+        <BasicLayout>
+            <div>
+                11111
+            </div>
+        </BasicLayout>
+
     )
 }
